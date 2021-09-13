@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Layer, Stage, Rect } from "react-konva";
+import { SplineLayer } from "./SplineLayer";
+import { useControls } from "leva";
 
 function App() {
+  const { layers, backgroundColor } = useControls({
+    layers: 1,
+    backgroundColor: "#000000",
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div style={{ width: "100vh", height: "100vh", position: "relative" }}>
+        <Stage
+          width={1000}
+          height={1000}
+          style={{ position: "absolute", inset: 0 }}
         >
-          Learn React
-        </a>
-      </header>
+          <Layer>
+            <Rect
+              x={0}
+              y={0}
+              width={1000}
+              height={1000}
+              fill={backgroundColor}
+              sceneFunc={(context, shape) => {
+                const p = new Path2D("M0,0L1000,0L1000,1000L0,1000Z");
+                context.fillStrokeShape(shape);
+                context._context.lineWidth = 0;
+                context._context.fill(p);
+              }}
+            />
+            {Array.from({ length: layers }).map((item, index) => (
+              <SplineLayer index={index} />
+            ))}
+          </Layer>
+        </Stage>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/splines-playground/static/css/main.9b30be1a.chunk.css",
+    "main.js": "/splines-playground/static/js/main.857c723d.chunk.js",
+    "main.js.map": "/splines-playground/static/js/main.857c723d.chunk.js.map",
+    "runtime-main.js": "/splines-playground/static/js/runtime-main.f79a7573.js",
+    "runtime-main.js.map": "/splines-playground/static/js/runtime-main.f79a7573.js.map",
+    "static/js/2.9a2a18fc.chunk.js": "/splines-playground/static/js/2.9a2a18fc.chunk.js",
+    "static/js/2.9a2a18fc.chunk.js.map": "/splines-playground/static/js/2.9a2a18fc.chunk.js.map",
+    "index.html": "/splines-playground/index.html",
+    "static/css/main.9b30be1a.chunk.css.map": "/splines-playground/static/css/main.9b30be1a.chunk.css.map",
+    "static/js/2.9a2a18fc.chunk.js.LICENSE.txt": "/splines-playground/static/js/2.9a2a18fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f79a7573.js",
+    "static/js/2.9a2a18fc.chunk.js",
+    "static/css/main.9b30be1a.chunk.css",
+    "static/js/main.857c723d.chunk.js"
+  ]
+}

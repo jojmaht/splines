@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,KAEE,eAAgB,CAChB,QACF,CAEA,YALE,gBAQF,CAHA,OAEE,eACF","file":"main.9b30be1a.chunk.css","sourcesContent":["body {\n  max-height: 100vh;\n  overflow: hidden;\n  margin: 0;\n}\n\ncanvas {\n  max-height: 100vh;\n  max-width: 100vh;\n}\n"]}

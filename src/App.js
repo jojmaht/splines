@@ -1,7 +1,7 @@
 import "./App.css";
 import { Layer, Stage, Rect } from "react-konva";
 import { SplineLayer } from "./SplineLayer";
-import { useControls } from "leva";
+import { useControls, Leva } from "leva";
 
 function App() {
   const { layers, backgroundColor } = useControls({
@@ -10,7 +10,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="App" style={{ display: "flex" }}>
       <div style={{ width: "100vh", height: "100vh", position: "relative" }}>
         <Stage
           width={1000}
@@ -37,6 +37,9 @@ function App() {
           </Layer>
         </Stage>
       </div>
+      {/* <>
+        <Leva fill />
+      </> */}
     </div>
   );
 }

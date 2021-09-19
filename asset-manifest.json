@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/splines-playground/static/css/main.9b30be1a.chunk.css",
-    "main.js": "/splines-playground/static/js/main.a1253dd0.chunk.js",
-    "main.js.map": "/splines-playground/static/js/main.a1253dd0.chunk.js.map",
+    "main.js": "/splines-playground/static/js/main.baeffe52.chunk.js",
+    "main.js.map": "/splines-playground/static/js/main.baeffe52.chunk.js.map",
     "runtime-main.js": "/splines-playground/static/js/runtime-main.0e763960.js",
     "runtime-main.js.map": "/splines-playground/static/js/runtime-main.0e763960.js.map",
     "static/js/2.da3ff059.chunk.js": "/splines-playground/static/js/2.da3ff059.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0e763960.js",
     "static/js/2.da3ff059.chunk.js",
     "static/css/main.9b30be1a.chunk.css",
-    "static/js/main.a1253dd0.chunk.js"
+    "static/js/main.baeffe52.chunk.js"
   ]
 }

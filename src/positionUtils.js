@@ -18,5 +18,10 @@ export const getPositionOffsets = (position) => {
       return { offsetX: 0, offsetY: 500 };
     case "bottom-right":
       return { offsetX: 500, offsetY: 500 };
+    default:
+      return {
+        offsetX: 0,
+        offsetY: 0,
+      };
   }
 };

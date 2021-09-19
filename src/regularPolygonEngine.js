@@ -17,8 +17,6 @@ export const getRegularPolygonPoints = (
   for (let i = 1; i <= numPoints; i++) {
     const theta = i * angleStep + Math.PI * 2 * ((rotation - 90) / 360);
 
-    const hexagramIndices = [0, 3, 6, 9, 12, 15, 18, 21, 24];
-
     const x = Math.cos(theta) * radius;
     const y = Math.sin(theta) * radius;
 

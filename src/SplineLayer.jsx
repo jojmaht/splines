@@ -1,34 +1,14 @@
+import { useEffect } from "react";
 import { Group, Shape } from "react-konva";
-import { useControls, folder, buttonGroup } from "leva";
+import { useControls, folder } from "leva";
 import { spline } from "@georgedoescode/spline";
 
 import { getRegularPolygonPoints } from "./regularPolygonEngine";
 import { getStarPolygonPoints } from "./starPolygonEngine";
 
-export const SplineLayer = ({ index }) => {
+export const SplineLayer = ({ index, exportPaths }) => {
   const layerLabel = `Layer ${index}`;
-  const {
-    type,
-    shape,
-    isFilled,
-    color,
-    tension,
-    radius,
-    nested,
-    nColor,
-    nTension,
-    nType,
-    nShape,
-    nRadius,
-    nThickness,
-    nRotation,
-    useNestedParams,
-    hideMainSpline,
-    thickness,
-    quickPosition,
-    precisePosition,
-    rotation,
-  } = useControls({
+  const properties = useControls({
     [layerLabel]: folder({
       type: {
         options: ["polygon", "star"],
@@ -65,6 +45,7 @@ export const SplineLayer = ({ index }) => {
           nType: {
             options: ["polygon", "star"],
           },
+          nIsFilled: false,
           nColor: "#ffffff",
           nTension: 0,
           nRadius: { value: 50, min: 0, max: 500, step: 1 },
@@ -81,6 +62,31 @@ export const SplineLayer = ({ index }) => {
       },
     }),
   });
+
+  const {
+    type,
+    shape,
+    isFilled,
+    color,
+    tension,
+    radius,
+    nested,
+    nColor,
+    nTension,
+    nIsFilled,
+    nType,
+    nShape,
+    nRadius,
+    nThickness,
+    nRotation,
+    useNestedParams,
+    hideMainSpline,
+    thickness,
+    quickPosition,
+    precisePosition,
+    rotation,
+  } = properties;
+
   const width = 1000;
 
   const getPointsGetter = (type) => {
@@ -99,7 +105,7 @@ export const SplineLayer = ({ index }) => {
   );
 
   const mainPath = !hideMainSpline
-    ? { path: spline(points, tension, true), color, thickness }
+    ? { path: spline(points, tension, true), color, thickness, isFilled }
     : [];
 
   const nestedPaths = nested
@@ -112,6 +118,7 @@ export const SplineLayer = ({ index }) => {
           const nestedTension = useNestedParams ? nTension : tension;
           const nestedThickness = useNestedParams ? nThickness : thickness;
           const nestedColor = useNestedParams ? nColor : color;
+          const nestedIsFilled = useNestedParams ? nIsFilled : isFilled;
 
           const nestedPoints = getPointsGetter(nestedType)(
             nestedRadius,
@@ -126,6 +133,7 @@ export const SplineLayer = ({ index }) => {
               path: spline(nestedPoints, nestedTension, true),
               color: nestedColor,
               thickness: nestedThickness,
+              isFilled: nestedIsFilled,
             },
           ].flat();
         })
@@ -133,15 +141,19 @@ export const SplineLayer = ({ index }) => {
     : [];
 
   const items = [mainPath, ...nestedPaths];
+
+  useEffect(() => {
+    exportPaths((paths) => ({ ...paths, ...{ [index]: items } }));
+  }, [properties]);
+
   return (
-    <Group zIndex={index} draggable={true}>
-      {items.map(({ path, color, thickness }) => (
+    <Group zIndex={index}>
+      {items.map(({ path, color, thickness, isFilled }) => (
         <Shape
           stroke={color}
           strokeWidth={thickness}
           x={0}
           y={0}
-          draggable={true}
           sceneFunc={(context, shape) => {
             const p = new Path2D(path);
             context.fillStrokeShape(shape);

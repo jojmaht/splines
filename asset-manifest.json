@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/splines-playground/static/css/main.9b30be1a.chunk.css",
-    "main.js": "/splines-playground/static/js/main.71fcec09.chunk.js",
-    "main.js.map": "/splines-playground/static/js/main.71fcec09.chunk.js.map",
-    "runtime-main.js": "/splines-playground/static/js/runtime-main.f79a7573.js",
-    "runtime-main.js.map": "/splines-playground/static/js/runtime-main.f79a7573.js.map",
-    "static/js/2.4ef91165.chunk.js": "/splines-playground/static/js/2.4ef91165.chunk.js",
-    "static/js/2.4ef91165.chunk.js.map": "/splines-playground/static/js/2.4ef91165.chunk.js.map",
+    "main.js": "/splines-playground/static/js/main.a1253dd0.chunk.js",
+    "main.js.map": "/splines-playground/static/js/main.a1253dd0.chunk.js.map",
+    "runtime-main.js": "/splines-playground/static/js/runtime-main.0e763960.js",
+    "runtime-main.js.map": "/splines-playground/static/js/runtime-main.0e763960.js.map",
+    "static/js/2.da3ff059.chunk.js": "/splines-playground/static/js/2.da3ff059.chunk.js",
+    "static/js/2.da3ff059.chunk.js.map": "/splines-playground/static/js/2.da3ff059.chunk.js.map",
     "index.html": "/splines-playground/index.html",
     "static/css/main.9b30be1a.chunk.css.map": "/splines-playground/static/css/main.9b30be1a.chunk.css.map",
-    "static/js/2.4ef91165.chunk.js.LICENSE.txt": "/splines-playground/static/js/2.4ef91165.chunk.js.LICENSE.txt"
+    "static/js/2.da3ff059.chunk.js.LICENSE.txt": "/splines-playground/static/js/2.da3ff059.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f79a7573.js",
-    "static/js/2.4ef91165.chunk.js",
+    "static/js/runtime-main.0e763960.js",
+    "static/js/2.da3ff059.chunk.js",
     "static/css/main.9b30be1a.chunk.css",
-    "static/js/main.71fcec09.chunk.js"
+    "static/js/main.a1253dd0.chunk.js"
   ]
 }
